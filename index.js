@@ -5,3 +5,4 @@ app.listen(4000 , function (){
     console.log("Your server is running on port 4000")
     }
 )
+app.use(express.static("public"))
