@@ -14,6 +14,7 @@ btn.addEventListener("click" , ()=>{
         'message' : msg.value,
         'username' : username.value
     })
+    msg.value = "";
 })
 socket.on("broadCast" , (data) => {
     output.innerHTML += '<p>' + data.username + ": " + data.message + '</p>'
