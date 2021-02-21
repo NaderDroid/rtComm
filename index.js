@@ -1,5 +1,5 @@
 const express = require("express");
-const socket = require("socket.io");
+const socketIO = require("socket.io");
 var app = express();
 let isConnected = false;
 
@@ -8,9 +8,9 @@ var server = app.listen(4000 , function (){
     }
 )
 app.use(express.static("public"));
-var sockServer = socket(server);
+var sockServer = socketIO(server);
 
-sockServer.on("connection" , () => {
+sockServer.on("connection" , (socket) => {
     isConnected = true;
     console.log("Web socket is connected" , socket.id)
 })
