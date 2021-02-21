@@ -13,4 +13,7 @@ var sockServer = socketIO(server);
 sockServer.on("connection" , (socket) => {
     isConnected = true;
     console.log("Web socket is connected" , socket.id)
+    socket.on("sendMessage" , (data) => {
+        sockServer.emit("broadCast" , data);
+    })
 })
