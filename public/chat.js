@@ -8,7 +8,7 @@ console.log("Nader from chat js");
 
 
 //here we're sending the data (user message) to the server
-btn.addEventListener("click" , ()=>{
+btn.addEventListener("keyup" , ()=>{
     console.log(socket.id);
     socket.emit("sendMessage" , {
         'message' : msg.value,
